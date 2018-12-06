@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/Reset.css">
+    <link rel="stylesheet" href="../css/index.css">
+
+</head>
+
+<body>
+    <header>
+        <div id="tgroup" class="s-header">
+            <h1 class="s-title">{{title}}</h1>
+            <h3 class="s-motto">{{motto}}</h3>
+        </div>
+        <div id="nav" class="s-nav">
+            <ul id="menu">
+                <li v-for="item in items">
+                    <a> {{item.message}}</a>
+                </li>
+            </ul>
+            <i class="navicon"></i>
+        </div>
+    </header>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: "#tgroup",
+        data: {
+            title: "Small...Huge",
+            motto: "keep foolish,keep hungry"
+        }
+    })
+    new Vue({
+        el: "#menu",
+        data: {
+            items: [
+                { message: "Home" },
+                { message: "Archive" },
+                { message: "Tags" },
+                { message: "About" },
+            ]
+        }
+    })
+</script>
+
+</html>
