@@ -2,10 +2,11 @@
 <html>
 
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/Reset.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
 
 </head>
 
@@ -16,12 +17,24 @@
             <h3 class="s-motto">{{motto}}</h3>
         </div>
         <div id="nav" class="s-nav">
-            <ul id="menu">
-                <li v-for="item in items">
-                    <a> {{item.message}}</a>
-                </li>
-            </ul>
-            <i class="navicon"></i>
+            <div class="s-nav-normal">
+                <ul id="menu">
+                    <li v-for="item in items">
+                        <a> {{item.message}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="s-nav-mobile">
+                <div class="s-nav-mobile-btn">
+                <a id="navBtn" v-on:click="navClick">
+                    <i class="fa fa-navicon"></i>
+                </a></div>
+                <ul id="menu-mobile" v-bind:class="{active:isactive}">
+                    <li v-for="item in items">
+                        <a> {{item.message}}</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
     </div>
@@ -42,8 +55,32 @@
                 { message: "Home" },
                 { message: "Archive" },
                 { message: "Tags" },
-                { message: "About" },
+                { message: "About" }
             ]
+        }
+    })
+    var menuMobile = new Vue({
+        el: "#menu-mobile",
+        data: {
+            items: [
+                { message: "Home" },
+                { message: "Archive" },
+                { message: "Tags" },
+                { message: "About" }
+            ],
+            isactive: false
+        }
+    })
+    new Vue({
+        el: "#navBtn",
+        data: {
+            isClick: false
+        },
+        methods: {
+            navClick: function (event) {
+                this.isClick = !this.isClick;
+                menuMobile.isactive = this.isClick;
+            }
         }
     })
 </script>

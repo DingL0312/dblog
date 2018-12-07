@@ -19,19 +19,52 @@ header .s-nav{
     margin-top: 30px;
     height: 22px;
     border-bottom: 1px gray solid; 
-
 }
+header .s-nav .s-nav-mobile{
+   display: none;
+}
+header .s-nav .s-nav-mobile .active
+{
+    display:block;
+}
+header .s-nav .s-nav-mobile .s-nav-mobile-btn{
+    margin:0 auto;  
+    margin-bottom: 15px;
+    width: 50px;
+    text-align: center;
+ } 
+header .s-nav .s-nav-mobile ul{
+    width: 120px;
+    text-align: center;
+    margin:0 auto;  
+    display: none;
+ }
+ header .s-nav .s-nav-mobile ul li{
+    padding-bottom: 15px;
+ }
 @media screen and (max-width:460px)
 {
+    header .s-header{
+    margin:0 auto;
+    margin-top: 50px;
+    }
     header .s-nav{
+        width: 100%;
+        display: inline-block;
+        height: auto;
+    }
+    header .s-nav .s-nav-normal{
         display: none;
     }
+    header .s-nav .s-nav-mobile{
+        display:block;
+     }
 }
 header .s-nav ul{
     width: 440px;
     margin:0 auto;
 }
-header .s-nav ul li{
+header .s-nav ul#menu li{
     float: left;
     text-align: center;
     width: 110px; 
@@ -40,7 +73,7 @@ header .s-nav ul li{
     display: block;
     transition: border-bottom 0.5s;
 }
-header .s-nav ul li:hover{
+header .s-nav ul#menu li:hover{
     font-weight: bold;
     border-bottom: 1px white solid;
 }
