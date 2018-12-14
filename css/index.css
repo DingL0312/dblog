@@ -77,3 +77,18 @@ header .s-nav ul#menu li:hover{
     font-weight: bold;
     border-bottom: 1px white solid;
 }
+.s-articles{
+    width: 694px;
+    margin:  0 auto;
+    margin-top: 20px;
+    border: 1px solid black;
+}
+.s-articles header a:hover h1{
+  color: red;
+}
+.s-articles header h1{
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    transition: color 0.3s;
+}
